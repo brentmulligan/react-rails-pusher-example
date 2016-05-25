@@ -11,6 +11,7 @@ page will update in real time.
 ## How to try it out:
 * Clone repo
 * Bundle install
+* rake db:create, rake db:migrate
 * Add your Pusher keys to secrets.yml (if you don't have an account sign up for a free account)
 * Start server
 * Make up a unique name for the thread and in a new window go to localhost:3000/threads/made_up_thread_uid
