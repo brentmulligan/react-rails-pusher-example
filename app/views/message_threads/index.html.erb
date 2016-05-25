@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h4>Thread: <em><%= @thread_uid %></em></h4>
+    <div id="messagesContainer"></div>
+  </div>
+</div>
+
+<script type="application/javascript">
+  window.ENV = window.ENV || {};
+  window.ENV.threadUid = "<%= @thread_uid %>"
+  window.ENV.channelUid = "test_channel"
+  window.ENV.clientUid = "<%= Rails.application.secrets.pusher_key %>"
+  window.ENV.messages = <%= @messages.reverse.to_json.html_safe %>
+</script>
