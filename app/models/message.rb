@@ -3,6 +3,8 @@ require 'pusher'
 class Message < ActiveRecord::Base
   after_create :push_message
 
+  private
+
   def push_message
     Pusher.trigger('test_channel', thread_uid, {
         from_uid: from_uid,
